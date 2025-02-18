@@ -14,7 +14,6 @@ width:50rem;
 width:54rem;
 margin:auto;
 display: flex;
-flex-direction:column;
 gap:2rem;
 margin-top:2rem;
 gap: 2rem;
