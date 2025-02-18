@@ -4,6 +4,8 @@ export const PostContext = createContext()
 
 export function PostContextProvider ({children} : {children : ReactNode}){
     
+   
+    function 
 
     return(
     <div>
