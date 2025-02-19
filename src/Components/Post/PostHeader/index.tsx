@@ -11,8 +11,8 @@ export function PostHeader(){
 
 
   return(
-   <HeaderContainer>
-    <HeaderProfile>
+   <HeaderContainer >
+    <HeaderProfile >
        <a href="/">
        <FontAwesomeIcon 
        icon={faChevronLeft} 
@@ -34,7 +34,7 @@ export function PostHeader(){
         JavaScript data types and data structures
        </ProfileTitle>
 
-       <ProfileUserMedia>
+       <ProfileUserMedia >
         <span><FontAwesomeIcon 
          icon={faGithub}
          color="#3A536B"
