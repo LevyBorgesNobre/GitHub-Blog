@@ -4,21 +4,21 @@ import { PostContext } from "../../../../@PostContext";
 
   export function Posts(){
 
-   const context = useContext(PostContext);
-   const { issues } = context;
-   console.log(issues)
-
-    return(
-        <>
-        {issues.map(issue=>{ 
-          return(
-        <PostPage
-        id={issue.id}
-        PostTitle={issue.title}
-        PostPublicationDate={issue.upadted_at}
-        PostContent={issue.body}
-        />)})}
-       
-        </>
-    )
+    const context = useContext(PostContext);
+    const { issues } = context;
+    console.log(issues)
+ 
+     return(
+         <>
+         {issues.map(issue=>{ 
+           return(
+         <PostPage
+         id={issue.id}
+         PostTitle={issue.title}
+         PostPublicationDate={issue.upadted_at}
+         PostContent={issue.body}
+         />)})}
+        
+         </>
+     )
   }
