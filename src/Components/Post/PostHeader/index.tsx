@@ -6,9 +6,16 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { HeaderContainer, HeaderProfile, ProfileTitle, ProfileUserMedia } from "./styles";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { PostContext } from "../../../@PostContext";
 
 export function PostHeader(){
 
+ const context = useContext(PostContext);
+ const {issues} = context;
+ const {id} = useParams();
+ const issue = issues.find(post=> Number(post.id) === Number(id))
 
   return(
    <HeaderContainer >
@@ -21,7 +28,7 @@ export function PostHeader(){
        VOLTAR
        </a> 
 
-        <a href="">
+        <a href={issue.html_url}>
         VER NO GITHUB  
        <FontAwesomeIcon 
        icon={faArrowUpRightFromSquare} 
@@ -31,7 +38,7 @@ export function PostHeader(){
        </HeaderProfile>
 
        <ProfileTitle>
-        JavaScript data types and data structures
+        {issue.title}
        </ProfileTitle>
 
        <ProfileUserMedia >
@@ -39,7 +46,7 @@ export function PostHeader(){
          icon={faGithub}
          color="#3A536B"
          style={{fontSize: '1.1rem'}}/>
-         LevyNobre
+         {issue.user.login}
          </span>
 
          <span>
@@ -48,16 +55,16 @@ export function PostHeader(){
           color="#3A536B"
           style={{fontSize: '1.1rem'}}
           />
-          há 1 dia
+          {issue.updated_at}
          </span>
-
+         
          <span>
          <FontAwesomeIcon 
           icon={faComment}
           color="#3A536B"
           style={{fontSize: '1.1rem'}}
           />
-          5 comentários
+          {issue.comments} comentários
          </span>
        </ProfileUserMedia>
    </HeaderContainer>

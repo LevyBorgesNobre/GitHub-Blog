@@ -1,11 +1,23 @@
+import { useContext } from "react";
 import { Content, ContentContainer } from "./styles";
+import { PostContext } from "../../../@PostContext";
+import {  useParams } from "react-router-dom";
 
 export function PostContent(){
- return(
+
+  const {id} = useParams();
+   
+  const context = useContext(PostContext)
+  const {issues} = context;
+  
+ const issue = issues.find(post=> Number(post.id) === Number(id))
+ console.log(issues)
+
+  return(
     <ContentContainer>
        <Content >
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae congue nisi. Nulla facilisi. Curabitur vitae leo a purus convallis condimentum. Integer a felis ut lectus finibus auctor. Morbi vestibulum, dui ac viverra dignissim, nisi neque posuere ipsum, ut cursus ante magna nec felis. Vivamus pharetra, purus in cursus gravida, lorem ante mollis neque, sed fermentum turpis tortor et neque. Pellentesque non lectus at nulla viverra feugiat.</p>
+         {issue.body}
         </Content>
     </ContentContainer>
- )
+   )
 }

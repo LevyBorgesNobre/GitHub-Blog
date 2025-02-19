@@ -10,7 +10,6 @@ interface UserProfileData  {
     id: number;
    }
   
-   
    export function PostPage({PostTitle, PostPublicationDate, PostContent, id} : UserProfileData){
     
    const navigate = useNavigate()
