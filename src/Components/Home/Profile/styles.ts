@@ -16,8 +16,8 @@ export const Container = styled.div`
 
  export const ProfilePicture = styled.img`
  height: 9.5rem;
- width:9.5rem;
- border-radius:10px;
+ min-width:9.5rem;
+ border-radius:10%;
  background-color: white;
  margin-top:2rem;
  margin-left:2rem;
@@ -45,6 +45,7 @@ export const Container = styled.div`
 
 a{ 
     font-family: "Nunito", serif;
+    font-weight: bold;
     margin-top:0.5rem;
     font-size:0.8rem;
     color: ${props=> props.theme['blue']};
@@ -71,7 +72,8 @@ a{
  width:27rem;
  margin-top:2rem;
  display: flex;
- gap: 4rem;
+ gap: 2rem;
+ white-space: nowrap;
 
  p{
     color: ${props=> props.theme['base-text']};
