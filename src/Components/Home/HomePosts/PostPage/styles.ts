@@ -14,7 +14,7 @@ export const Post  = styled.button`
 
 export const Container = styled.div`
  display:flex;
- gap: 1rem;
+ justify-content: space-between;
 `;
 
 export const Title = styled.p`
@@ -23,7 +23,7 @@ export const Title = styled.p`
  font-family: "Nunito", serif;
  font-weight: bold;
  font-style: normal;
- font-size:1.1rem;
+ font-size:1.2rem;
  margin-top:2rem;
  white-space: pre-line;
  text-align: left;
@@ -42,9 +42,8 @@ export const Content = styled.span`
   max-height: 7rem;                   
   width: 20rem;
   color: ${props => props.theme['base-span']};
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: left;
-  margin-top: 0.5rem;
   margin-left: 1.5rem;
   display: -webkit-box;              
   -webkit-box-orient: vertical;      

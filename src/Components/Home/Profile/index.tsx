@@ -27,7 +27,7 @@ export function Profile (){
           <ProfileUserData>
             <p><FontAwesomeIcon icon={faGithub} color='#3A536B' size="1x"/>{user.login}</p> 
             <p><FontAwesomeIcon icon={faBuilding} color='#3A536B' size="1x"/> -</p>
-            <p><FontAwesomeIcon icon={faUserGroup} color='#3A536B' size="1x"/>{user.followers}</p>
+            <p><FontAwesomeIcon icon={faUserGroup} color='#3A536B' size="1x"/>{user.followers} seguidores</p>
           </ProfileUserData>
         </ProfileUser>
      </Container>

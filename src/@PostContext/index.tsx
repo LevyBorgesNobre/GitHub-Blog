@@ -1,10 +1,12 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { api } from "../lib/axios";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 export const PostContext = createContext({});
 
 export function PostContextProvider({ children }: { children: ReactNode }) {
-  const [issues, setIssues] = useState([]);
+  const [issues ,setIssues] = useState([]);
   const [user, setUser] = useState({});
 
   async function fetchIssues() {
@@ -14,16 +16,21 @@ export function PostContextProvider({ children }: { children: ReactNode }) {
 
   async function fetchIssuesName() {
       const responseProfile = await api.get('/users/LevyBorgesNobre');
-      setUser(responseProfile.data);
+      setUser(responseProfile.data );
   }
-
+ 
+  
   useEffect(() => {
     fetchIssues();
     fetchIssuesName();
   }, []);
 
   return (
-    <PostContext.Provider value={{ issues, user, fetchIssues, fetchIssuesName }}>
+    <PostContext.Provider value={{ issues,
+     user,
+    fetchIssues,
+    fetchIssuesName,
+     }}>
       {children}
     </PostContext.Provider>
   );

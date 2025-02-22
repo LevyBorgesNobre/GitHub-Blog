@@ -14,15 +14,16 @@ width:50rem;
 width:54rem;
 margin:auto;
 display: flex;
-gap:2rem;
+flex-direction: column;
 margin-top:2rem;
-gap: 2rem;
-
-p{
+gap: 1rem;
+line-height: 120%;
+`
+export const Paragraph = styled.p`
  color: ${props=> props.theme['base-text']};
  font-family: "Nunito", serif;
  white-space: pre-line;
  text-align: left;
- line-height: 120%;
-}
+ line-height: 160%;
 `
+

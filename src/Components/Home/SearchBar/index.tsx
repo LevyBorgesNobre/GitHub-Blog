@@ -1,11 +1,16 @@
 import { Container, Publications, SearchContent } from "./styles"
+import { PostContext } from "../../../@PostContext"
+import { useContext } from "react"
 
 export function SearchBar(){
+
+    const { user } = useContext(PostContext);
+
     return(
       <Container>
       <Publications>
         <p>Publicações</p> 
-        <span>6 publicações</span>
+        <span>{user.public_repos} publicações</span>
       </Publications>
       <SearchContent placeholder="Buscar conteúdo"/>
       </Container>

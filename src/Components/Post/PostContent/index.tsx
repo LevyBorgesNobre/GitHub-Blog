@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Content, ContentContainer } from "./styles";
 import { PostContext } from "../../../@PostContext";
 import {  useParams } from "react-router-dom";
+import ReactMarkdown from 'react-markdown'
+import { Paragraph, Title } from "./styles";
 
 export function PostContent(){
 
@@ -11,12 +13,15 @@ export function PostContent(){
   const {issues} = context;
   
  const issue = issues.find(post=> Number(post.id) === Number(id))
- console.log(issues)
 
   return(
     <ContentContainer>
        <Content >
-         {issue.body}
+        <ReactMarkdown
+        components={
+          { p: Paragraph }}
+        >{issue.body}
+        </ReactMarkdown>
         </Content>
     </ContentContainer>
    )

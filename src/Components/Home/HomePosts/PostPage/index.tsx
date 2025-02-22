@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { Post, Container, Title, PublicationDate, Content } from "./styles";   
-import { PostContext } from "../../../../@PostContext";
 import { useNavigate } from "react-router-dom";
 
 interface UserProfileData  {
