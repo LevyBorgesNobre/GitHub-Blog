@@ -3,7 +3,7 @@ import { Content, ContentContainer } from "./styles";
 import { PostContext } from "../../../@PostContext";
 import {  useParams } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
-import { Paragraph, Title } from "./styles";
+import { Paragraph } from "./styles";
 
 export function PostContent(){
 
@@ -17,9 +17,8 @@ export function PostContent(){
   return(
     <ContentContainer>
        <Content >
-        <ReactMarkdown
-        components={
-          { p: Paragraph }}
+       <ReactMarkdown
+        components={{p: (props)=>(<Paragraph {...props}/>)}}
         >{issue.body}
         </ReactMarkdown>
         </Content>

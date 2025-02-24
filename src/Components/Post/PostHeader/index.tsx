@@ -6,7 +6,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { HeaderContainer, HeaderProfile, ProfileTitle, ProfileUserMedia } from "./styles";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { PostContext } from "../../../@PostContext";
 import { formatDistanceToNow } from "date-fns";
@@ -18,14 +18,12 @@ export function PostHeader(){
  const {issues} = context;
  const {id} = useParams();
  
- const issue =  {
- data: issues.find(post=> Number(post.id) === Number(id))
-}
-
+ const issue =  { data: issues.find(post=> Number(post.id) === Number(id))}
+ const navigate = useNavigate();
   return(
     <HeaderContainer >
      <HeaderProfile >
-        <a href="/">
+        <a onClick={()=>{navigate(-1)}}>
         <FontAwesomeIcon 
         icon={faChevronLeft} 
         style={{fontSize: '0.8rem'}}

@@ -1,5 +1,6 @@
-import { Post, Container, Title, PublicationDate, Content } from "./styles";   
+import { Post, Container, Title, PublicationDate, Content, Span, TitleMarkdown, DateMarkdown, ContentMarkdown } from "./styles";   
 import { useNavigate } from "react-router-dom";
+import ReactMarkdown from 'react-markdown'
 
 interface UserProfileData  {
     PostTitle:string;
@@ -24,7 +25,9 @@ interface UserProfileData  {
           </PublicationDate>
           </Container>
           <Content>
+             <ReactMarkdown components={{span: (props)=>(<Content {...props}/>),}}>
              {PostContent}
+             </ReactMarkdown>
           </Content>
          </Post>
          </>

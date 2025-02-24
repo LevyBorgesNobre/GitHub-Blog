@@ -16,8 +16,9 @@ margin:auto;
 display: flex;
 flex-direction: column;
 margin-top:2rem;
-gap: 1rem;
+gap: 1.5rem;
 line-height: 120%;
+font-family: "Nunito", serif;
 `
 export const Paragraph = styled.p`
  color: ${props=> props.theme['base-text']};
@@ -26,4 +27,6 @@ export const Paragraph = styled.p`
  text-align: left;
  line-height: 160%;
 `
+
+
 

@@ -5,11 +5,18 @@ export const Post  = styled.button`
  min-width:26rem;
  max-width:26rem;
  background-color: ${props=> props.theme['base-post']};
- border: transparent;
+ border:transparent;
  border-radius:10px;
  display: flex;
+ gap: 1rem;
  flex-direction:column;
  padding: 16px;
+
+&:hover{
+  border: 1px solid ${props=> props.theme['base-span']};
+  transition: 0.3s;
+}
+
 `;
 
 export const Container = styled.div`
@@ -31,6 +38,7 @@ export const Title = styled.p`
  line-height: 160%;
 `;
 
+
 export const PublicationDate = styled.span`
  color: ${props=> props.theme['base-span']};
  margin: auto;
@@ -38,10 +46,12 @@ export const PublicationDate = styled.span`
  font-size:0.9rem;
 `;
 
+
 export const Content = styled.span`
+
+  font-family: "Nunito", serif;
   max-height: 7rem;                   
   width: 20rem;
-  color: ${props => props.theme['base-span']};
   font-size: 1rem;
   text-align: left;
   margin-left: 1.5rem;
@@ -50,5 +60,9 @@ export const Content = styled.span`
   overflow: hidden;                
   -webkit-line-clamp: 4;            
   text-overflow: ellipsis;     
-  line-height: 160%;
-`;
+  line-height: 165%;
+  color: ${props => props.theme['base-span']};
+  
+  `;
+
+
