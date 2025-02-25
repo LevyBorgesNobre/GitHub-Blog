@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { PostPage } from "../PostPage";
-import { PostContext } from "../../../../@PostContext";
+import { PostContext, PostContextType } from "../../../../@PostContext";
 import {  formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 
   export function Posts(){
 
-    const context = useContext(PostContext);
+    const context = useContext(PostContext) as PostContextType;
     const { issues } = context;
 
      return(

@@ -1,10 +1,10 @@
 import { Container, Publications, SearchContent } from "./styles"
-import { PostContext } from "../../../@PostContext"
+import { PostContext, PostContextType } from "../../../@PostContext"
 import { useContext } from "react"
 
 export function SearchBar(){
 
-    const { user, search, handleSearch, handleKeyPress  } = useContext(PostContext);
+    const { user, search, handleSearch, handleKeyPress  } = useContext(PostContext) as PostContextType;
     
     return(
       <Container>

@@ -1,4 +1,4 @@
-import { Post, Container, Title, PublicationDate, Content, Span, TitleMarkdown, DateMarkdown, ContentMarkdown } from "./styles";   
+import { Post, Container, Title, PublicationDate, Content } from "./styles";   
 import { useNavigate } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 

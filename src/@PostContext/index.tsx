@@ -2,13 +2,45 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import { api } from "../lib/axios";
 import { useSearchParams } from "react-router-dom";
 
-export const PostContext = createContext({});
+interface Issue {
+  id: number;
+  title: string;
+  body: string;
+  updated_at: string;
+  html_url:string;
+  user: {
+    login: string;
+  }
+  comments: number;
+}
+
+interface User {
+  login: string;
+  name: string;
+  avatar_url: string;
+  bio: string;
+  followers: number;
+  public_repos: number;
+}
+
+export interface PostContextType {
+  issues: Issue[];
+  user: User;
+  fetchIssues: () => void;
+  fetchIssuesName: () => void;
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+}
+
+export const PostContext = createContext<PostContextType | undefined>(undefined);
 
 export function PostContextProvider({ children }: { children: ReactNode }) {
-  const [issues ,setIssues] = useState([]);
-  const [user, setUser] = useState({});
+  const [issues ,setIssues] = useState<Issue[]>([]);
+  const [user, setUser] = useState<User>({ login: '', name: '', avatar_url: '', bio: '', followers: 0, public_repos: 0 });
   const [search, setSearch] = useState('');
-  const [searchResult, setSearchResult] = useSearchParams();
+  const [searchResult, setSearchResult] = useSearchParams({});
   
    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>)=>{
     setSearch(e.target.value)

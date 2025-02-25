@@ -1,12 +1,11 @@
 import { Container, ProfilePicture, ProfileUser, ProfileUserData, ProfileUserDescription, ProfileUserName } from "./styles";
-import {ArrowSquareOut} from "phosphor-react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faBuilding } from "@fortawesome/free-solid-svg-icons";
 import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
+import { ArrowSquareOut } from "phosphor-react";
 import { PostContext, PostContextType } from "../../../@PostContext";
-import { useParams } from "react-router-dom";
 
 export function Profile (){
 
