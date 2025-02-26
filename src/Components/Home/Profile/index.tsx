@@ -11,14 +11,13 @@ export function Profile (){
 
  const { user } = useContext(PostContext) as PostContextType;
  console.log(user)
-
   return(
     <>
         <Container>
         <ProfilePicture src={user?.avatar_url}  alt="foto de perfil"/>
         <ProfileUser>
           <ProfileUserName>
-            <p>{user.name}</p> <a href=''>GITHUB <ArrowSquareOut size={13} color="#3294F8"/></a>
+            <p>{user.name}</p> <a href={user.html_url}>GITHUB <ArrowSquareOut size={13} color="#3294F8"/></a>
           </ProfileUserName>
           <ProfileUserDescription>
             <p>{user.bio}</p>

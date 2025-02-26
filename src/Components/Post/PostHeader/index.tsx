@@ -18,6 +18,7 @@ export function PostHeader(){
  const {issues} = context;
  const {id} = useParams();
  
+ 
  const issue =  { data: issues.find(post=> Number(post.id) === Number(id))}
  const navigate = useNavigate();
   return(

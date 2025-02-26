@@ -21,6 +21,7 @@ interface User {
   bio: string;
   followers: number;
   public_repos: number;
+  html_url: string;
 }
 
 export interface PostContextType {
@@ -38,7 +39,7 @@ export const PostContext = createContext<PostContextType | undefined>(undefined)
 
 export function PostContextProvider({ children }: { children: ReactNode }) {
   const [issues ,setIssues] = useState<Issue[]>([]);
-  const [user, setUser] = useState<User>({ login: '', name: '', avatar_url: '', bio: '', followers: 0, public_repos: 0 });
+  const [user, setUser] = useState<User>({ login: '', name: '', avatar_url: '', bio: '', followers: 0, public_repos: 0, html_url: '' });
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useSearchParams({});
   

@@ -62,7 +62,7 @@ export const Content = styled.span`
   text-overflow: ellipsis;     
   line-height: 165%;
   color: ${props => props.theme['base-span']};
-  
+   
   `;
 
 
