@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { api } from "../lib/axios";
 import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface Issue {
   id: number;
@@ -43,8 +44,14 @@ export function PostContextProvider({ children }: { children: ReactNode }) {
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useSearchParams({});
   
+   const navigate = useNavigate();
+
    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>)=>{
     setSearch(e.target.value)
+   
+    if( e.target.value === ''){
+      navigate(-1);
+    }
    }
 
   async function fetchIssues() {
@@ -62,7 +69,6 @@ export function PostContextProvider({ children }: { children: ReactNode }) {
   async function fetchIssuesSearch() {
     const response = await api.get(`/search/issues?q=${search}+repo:LevyBorgesNobre/GitHub-Blog`);
     setIssues(response.data.items || []);
-    setSearch('');
   }
 
   function SearchIssues(){
